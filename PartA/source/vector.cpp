@@ -1,4 +1,5 @@
 #include "../include/vector.h"
+// #include <cassert>
 
 // Accessor
 int Vector::getSize() const { return mSize; }
@@ -119,97 +120,107 @@ const double& Vector::operator()(int index) const {
     return mData[index - 1];
 }
 
-// Code for testing each function.
-int main() {
-    try {
-        std::cout << "===== TEST CONSTRUCTOR =====" << std::endl;
-        Vector v1(3); // v1 = [0, 0, 0]
-        v1[0] = 1.0;
-        v1[1] = 2.0;
-        v1[2] = 3.0;
-
-        std::cout << "v1 = [ ";
-        for (int i = 0; i < 3; ++i) std::cout << v1[i] << " ";
-        std::cout << "]" << std::endl;
-
-        std::cout << "\n===== TEST COPY CONSTRUCTOR =====" << std::endl;
-        Vector v2 = v1;
-        std::cout << "v2 (copy of v1) = [ ";
-        for (int i = 0; i < 3; ++i) std::cout << v2[i] << " ";
-        std::cout << "]" << std::endl;
-
-        std::cout << "\n===== TEST ASSIGNMENT OPERATOR =====" << std::endl;
-        Vector v3;
-        v3 = v1;
-        std::cout << "v3 (assigned from v1) = [ ";
-        for (int i = 0; i < 3; ++i) std::cout << v3[i] << " ";
-        std::cout << "]" << std::endl;
-
-        std::cout << "\n===== TEST UNARY OPERATORS =====" << std::endl;
-        Vector vNeg = -v1;
-        std::cout << "-v1 = [ ";
-        for (int i = 0; i < 3; ++i) std::cout << vNeg[i] << " ";
-        std::cout << "]" << std::endl;
-
-        ++v1;
-        std::cout << "++v1 = [ ";
-        for (int i = 0; i < 3; ++i) std::cout << v1[i] << " ";
-        std::cout << "]" << std::endl;
-
-        --v1;
-        std::cout << "--v1 = [ ";
-        for (int i = 0; i < 3; ++i) std::cout << v1[i] << " ";
-        std::cout << "]" << std::endl;
-
-        std::cout << "\n===== TEST BINARY OPERATORS =====" << std::endl;
-        Vector v4(3);
-        v4[0] = 5.0; v4[1] = 4.0; v4[2] = 3.0;
-
-        Vector sum = v1 + v4;
-        Vector diff = v1 - v4;
-        Vector scaled1 = v1 * 2.0;
-        Vector scaled2 = 3.0 * v1;
-
-        std::cout << "v1 + v4 = [ ";
-        for (int i = 0; i < 3; ++i) std::cout << sum[i] << " ";
-        std::cout << "]" << std::endl;
-
-        std::cout << "v1 - v4 = [ ";
-        for (int i = 0; i < 3; ++i) std::cout << diff[i] << " ";
-        std::cout << "]" << std::endl;
-
-        std::cout << "v1 * 2 = [ ";
-        for (int i = 0; i < 3; ++i) std::cout << scaled1[i] << " ";
-        std::cout << "]" << std::endl;
-
-        std::cout << "3 * v1 = [ ";
-        for (int i = 0; i < 3; ++i) std::cout << scaled2[i] << " ";
-        std::cout << "]" << std::endl;
-
-        std::cout << "\n===== TEST INDEXING [] (0-based) =====" << std::endl;
-        std::cout << "v1[0] = " << v1[0] << ", v1[2] = " << v1[2] << std::endl;
-
-        std::cout << "\n===== TEST INDEXING () (1-based) =====" << std::endl;
-        std::cout << "v1(1) = " << v1(1) << ", v1(3) = " << v1(3) << std::endl;
-
-        std::cout << "\n===== TEST OUT OF RANGE =====" << std::endl;
-        try {
-            std::cout << v1[100] << std::endl;
-        } catch (std::exception& e) {
-            std::cout << "Caught exception for v1[100]: " << e.what() << std::endl;
-        }
-
-        try {
-            std::cout << v1(0) << std::endl;
-        } catch (std::exception& e) {
-            std::cout << "Caught exception for v1(0): " << e.what() << std::endl;
-        }
-
-        std::cout << "\n===== ALL TESTS PASSED SUCCESSFULLY =====" << std::endl;
-
-    } catch (std::exception& e) {
-        std::cerr << "Unexpected exception: " << e.what() << std::endl;
-    }
-
-    return 0;
+// Dot product
+double Vector::operator*(const Vector& other) const {
+    if (mSize != other.mSize)
+        throw std::invalid_argument("Vectors must be of the same size for dot product");
+    double result = 0.0;
+    for (int i = 0; i < mSize; ++i)
+        result += mData[i] * other.mData[i];
+    return result;
 }
+
+// // Code for testing each function.
+// int main() {
+//     try {
+//         std::cout << "===== TEST CONSTRUCTOR =====" << std::endl;
+//         Vector v1(3); // v1 = [0, 0, 0]
+//         v1[0] = 1.0;
+//         v1[1] = 2.0;
+//         v1[2] = 3.0;
+
+//         std::cout << "v1 = [ ";
+//         for (int i = 0; i < 3; ++i) std::cout << v1[i] << " ";
+//         std::cout << "]" << std::endl;
+
+//         std::cout << "\n===== TEST COPY CONSTRUCTOR =====" << std::endl;
+//         Vector v2 = v1;
+//         std::cout << "v2 (copy of v1) = [ ";
+//         for (int i = 0; i < 3; ++i) std::cout << v2[i] << " ";
+//         std::cout << "]" << std::endl;
+
+//         std::cout << "\n===== TEST ASSIGNMENT OPERATOR =====" << std::endl;
+//         Vector v3;
+//         v3 = v1;
+//         std::cout << "v3 (assigned from v1) = [ ";
+//         for (int i = 0; i < 3; ++i) std::cout << v3[i] << " ";
+//         std::cout << "]" << std::endl;
+
+//         std::cout << "\n===== TEST UNARY OPERATORS =====" << std::endl;
+//         Vector vNeg = -v1;
+//         std::cout << "-v1 = [ ";
+//         for (int i = 0; i < 3; ++i) std::cout << vNeg[i] << " ";
+//         std::cout << "]" << std::endl;
+
+//         ++v1;
+//         std::cout << "++v1 = [ ";
+//         for (int i = 0; i < 3; ++i) std::cout << v1[i] << " ";
+//         std::cout << "]" << std::endl;
+
+//         --v1;
+//         std::cout << "--v1 = [ ";
+//         for (int i = 0; i < 3; ++i) std::cout << v1[i] << " ";
+//         std::cout << "]" << std::endl;
+
+//         std::cout << "\n===== TEST BINARY OPERATORS =====" << std::endl;
+//         Vector v4(3);
+//         v4[0] = 5.0; v4[1] = 4.0; v4[2] = 3.0;
+
+//         Vector sum = v1 + v4;
+//         Vector diff = v1 - v4;
+//         Vector scaled1 = v1 * 2.0;
+//         Vector scaled2 = 3.0 * v1;
+
+//         std::cout << "v1 + v4 = [ ";
+//         for (int i = 0; i < 3; ++i) std::cout << sum[i] << " ";
+//         std::cout << "]" << std::endl;
+
+//         std::cout << "v1 - v4 = [ ";
+//         for (int i = 0; i < 3; ++i) std::cout << diff[i] << " ";
+//         std::cout << "]" << std::endl;
+
+//         std::cout << "v1 * 2 = [ ";
+//         for (int i = 0; i < 3; ++i) std::cout << scaled1[i] << " ";
+//         std::cout << "]" << std::endl;
+
+//         std::cout << "3 * v1 = [ ";
+//         for (int i = 0; i < 3; ++i) std::cout << scaled2[i] << " ";
+//         std::cout << "]" << std::endl;
+
+//         std::cout << "\n===== TEST INDEXING [] (0-based) =====" << std::endl;
+//         std::cout << "v1[0] = " << v1[0] << ", v1[2] = " << v1[2] << std::endl;
+
+//         std::cout << "\n===== TEST INDEXING () (1-based) =====" << std::endl;
+//         std::cout << "v1(1) = " << v1(1) << ", v1(3) = " << v1(3) << std::endl;
+
+//         std::cout << "\n===== TEST OUT OF RANGE =====" << std::endl;
+//         try {
+//             std::cout << v1[100] << std::endl;
+//         } catch (std::exception& e) {
+//             std::cout << "Caught exception for v1[100]: " << e.what() << std::endl;
+//         }
+
+//         try {
+//             std::cout << v1(0) << std::endl;
+//         } catch (std::exception& e) {
+//             std::cout << "Caught exception for v1(0): " << e.what() << std::endl;
+//         }
+
+//         std::cout << "\n===== ALL TESTS PASSED SUCCESSFULLY =====" << std::endl;
+
+//     } catch (std::exception& e) {
+//         std::cerr << "Unexpected exception: " << e.what() << std::endl;
+//     }
+
+//     return 0;
+// }

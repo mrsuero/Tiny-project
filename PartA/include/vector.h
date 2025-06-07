@@ -43,7 +43,12 @@ class Vector{
     const double& operator()(int index) const;
 
     // cout << Vector
-    // friend std::ostream& operator<<(std::ostream& output, const Vector& v);
+    // friend std::ostream& operator<<(std::ostream& out, const Vector& v);
+
+    // Dot product (for linear to work)
+    double operator*(const Vector& other) const;
+
+
     
 };
 

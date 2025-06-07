@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cassert>
 #include <iomanip>
+#include "../include/vector.h" // for Vector*Vector -> linear can work
 
 class Matrix {
 private:
@@ -45,11 +46,15 @@ public:
     // Inverse
     Matrix inverse() const;
 
-    // Pseudo-inverse
+    // Pseudo inverse
     Matrix pseudoInverse() const;
 
     // cout << Matrix
     friend std::ostream& operator<<(std::ostream& output, const Matrix& m);
+
+    // Vector multi (Vectox*Vector) (for linear to work)
+    Vector operator*(const Vector& vec) const;
+
 };
 
 #endif
