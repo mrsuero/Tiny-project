@@ -111,18 +111,28 @@ The slightly lower test RMSE suggests good generalization, possibly due to effec
 
 ```
 TINY-PROJECT/
-├── ExA/
-│   ├── linearsystem.cpp
-│   ├── linearsystem.h
-│   ├── matrix.cpp
-│   ├── matrix.h
-│   ├── possymlinsystem.cpp
-│   ├── possymlinsystem.h
-│   ├── vector.cpp
-│   └── vector.h
-├── exB.cpp
+TINY-PROJECT/
+├── PartA/
+│   ├── include
+│       ├── linear.h
+│       ├── matrix.h
+│       ├── possym.h
+│       ├── vector.h
+│   ├── source
+│       ├── linear.cpp
+│       ├── matrix.cpp
+│       ├── possym.cpp
+│       ├── vector.cpp
+│   ├── main
+│   ├── main.cpp
+│   ├── Makefile
+├── LinearRegressionPrediction
+├── LinearRegressionPrediction.cpp
+├── Makefile
+├── README.md
 ├── machine.data
-└── README.md
+├── shuffled.txt
+└── .vscode/
 ```
 
 ---
