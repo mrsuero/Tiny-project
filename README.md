@@ -114,15 +114,15 @@ TINY-PROJECT/
 TINY-PROJECT/
 ├── PartA/
 │   ├── include
-│       ├── linear.h
-│       ├── matrix.h
-│       ├── possym.h
-│       ├── vector.h
+│   │   ├── linear.h
+│   │   ├── matrix.h
+│   │   ├── possym.h
+│   │   ├── vector.h
 │   ├── source
-│       ├── linear.cpp
-│       ├── matrix.cpp
-│       ├── possym.cpp
-│       ├── vector.cpp
+│   │   ├── linear.cpp
+│   │   ├── matrix.cpp
+│   │   ├── possym.cpp
+│   │   ├── vector.cpp
 │   ├── main
 │   ├── main.cpp
 │   ├── Makefile
