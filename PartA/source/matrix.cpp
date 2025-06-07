@@ -219,6 +219,17 @@ Vector Matrix::operator*(const Vector& vec) const {
     return result;
 }
 
+// Matrix tranpose
+Matrix Matrix::transpose() const {
+    Matrix result(mNumCols, mNumRows); // Đảo dòng và cột
+    for (int i = 0; i < mNumRows; ++i) {
+        for (int j = 0; j < mNumCols; ++j) {
+            result.mData[j][i] = mData[i][j];
+        }
+    }
+    return result;
+}
+
 // // Code for testing
 // int main() {
 //     try {

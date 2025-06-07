@@ -55,6 +55,9 @@ public:
     // Vector multi (Vectox*Vector) (for linear to work)
     Vector operator*(const Vector& vec) const;
 
+    // Matrix tranpose (for part B)
+    Matrix transpose() const;
+
 };
 
 #endif
