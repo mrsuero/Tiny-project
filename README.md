@@ -128,8 +128,8 @@ Where `λ = 10.0`
 
 | Metric           | Value     |
 |------------------|-----------|
-| **Train RMSE**   | 91.84     |
-| **Test RMSE**    | 88.67     |
+| **Train RMSE**   | 96.7141   |
+| **Test RMSE**    | 123.894   |
 
 The slightly lower test RMSE suggests good generalization, possibly due to effective regularization.
 
