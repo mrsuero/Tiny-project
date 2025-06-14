@@ -41,7 +41,7 @@ Using the developed library, a linear regression model predicts CPU performance 
 
 ## 🏗️ Division of Work
 
-### Le Tri Dung
+### Le Tri Dung - 10423022
 
 - Took charge of writing the main project report, including the introduction, methodology, experimental results, and conclusion.
 - Organized and managed the project’s README, ensuring clear structure and comprehensive documentation.
@@ -49,7 +49,7 @@ Using the developed library, a linear regression model predicts CPU performance 
 - Coordinated task allocation, managed version control, and ensured adherence to deadlines.
 - Assisted in code review and integration for both Part A and Part B.
 
-### Pham Khac Uy
+### Pham Khac Uy - 10423122
 
 - Main responsibility for **Part B (CPU Performance Prediction)**.
 - Implemented the data processing pipeline: data loading, shuffling, train/test split, and normalization.
@@ -57,7 +57,7 @@ Using the developed library, a linear regression model predicts CPU performance 
 - Conducted experiments, performance evaluation (RMSE), and result analysis.
 - Contributed to and reviewed portions of Part A.
 
-### Le Ngoc Khang Duy
+### Le Ngoc Khang Duy - 10423024
 
 - Main responsibility for **Part A (Linear Algebra Library)**.
 - Designed and implemented the core C++ classes: `Vector`, `Matrix`, `LinearSystem`, and `PosSymLinSystem`.
