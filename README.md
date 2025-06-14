@@ -39,6 +39,22 @@ Using the developed library, a linear regression model predicts CPU performance 
 
 ---
 
+## 🏗️ Division of Work
+
+**Le Tri Dung:**  
+- General report writing, project documentation, and README organization  
+- File and folder management for project structure
+
+**Pham Khac Uy:**  
+- Main responsibility for Part B (CPU Performance Prediction)  
+- Contributed to Part A (Linear Algebra Library)
+
+**Le Ngoc Khang Duy:**  
+- Main responsibility for Part A (Linear Algebra Library)  
+- Contributed to Part B (CPU Performance Prediction)
+
+---
+
 ## 🧠 Methodology
 
 ### Vector Class
@@ -110,7 +126,6 @@ The slightly lower test RMSE suggests good generalization, possibly due to effec
 ## 📁 Project Structure
 
 ```
-TINY-PROJECT/
 TINY-PROJECT/
 ├── PartA/
 │   ├── include
