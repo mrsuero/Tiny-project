@@ -41,17 +41,29 @@ Using the developed library, a linear regression model predicts CPU performance 
 
 ## 🏗️ Division of Work
 
-**Le Tri Dung:**  
-- General report writing, project documentation, and README organization  
-- File and folder management for project structure
+### Le Tri Dung
 
-**Pham Khac Uy:**  
-- Main responsibility for Part B (CPU Performance Prediction)  
-- Contributed to Part A (Linear Algebra Library)
+- Took charge of writing the main project report, including the introduction, methodology, experimental results, and conclusion.
+- Organized and managed the project’s README, ensuring clear structure and comprehensive documentation.
+- Designed the project folder structure for clarity and maintainability.
+- Coordinated task allocation, managed version control, and ensured adherence to deadlines.
+- Assisted in code review and integration for both Part A and Part B.
 
-**Le Ngoc Khang Duy:**  
-- Main responsibility for Part A (Linear Algebra Library)  
-- Contributed to Part B (CPU Performance Prediction)
+### Pham Khac Uy
+
+- Main responsibility for **Part B (CPU Performance Prediction)**.
+- Implemented the data processing pipeline: data loading, shuffling, train/test split, and normalization.
+- Developed the linear regression training, regularization, and evaluation modules.
+- Conducted experiments, performance evaluation (RMSE), and result analysis.
+- Contributed to and reviewed portions of Part A.
+
+### Le Ngoc Khang Duy
+
+- Main responsibility for **Part A (Linear Algebra Library)**.
+- Designed and implemented the core C++ classes: `Vector`, `Matrix`, `LinearSystem`, and `PosSymLinSystem`.
+- Developed algorithms for matrix operations, including Gaussian Elimination, Conjugate Gradient, determinant, and pseudo-inverse.
+- Wrote test cases, debugging support, and documentation for the library.
+- Contributed to and reviewed portions of Part B.
 
 ---
 
